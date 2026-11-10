@@ -5,11 +5,12 @@ a page: a chart, table, diagram or mockup shown right in the chat. The agent
 checks the page in headless Chrome first, so it sees what you will see and fixes
 it before you do.
 
-![Left: the agent writes chart.html, previews it at desktop and phone width, sees unreadable badges in the phone screenshot, edits the file and previews again, then renders it. Right: the same page in the DSH chat.](docs/demo.png)
+![A DSH chat showing a benchmark chart and table the agent rendered inline. Beside it, the agent's steps: it previewed the page at desktop and phone width, saw unreadable badges in the phone preview, fixed them, and rendered the page.](docs/demo.png)
 
 *A real session: asked for a benchmark chart that also reads well on a phone,
-the agent spotted unreadable badges in its own phone-width preview and fixed
-them before rendering.*
+the agent caught unreadable badges in its own phone-width preview and fixed
+them before rendering. The before/after crops are re-rendered at higher
+resolution from the session's two versions of the page.*
 
 Needs DSH 0.2.x (0.2.2-alpha.2 or later) and, for previews, Google Chrome or
 Chromium on the machine running DSH. MIT licensed.
