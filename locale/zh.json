@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "title": "HTML 渲染",
+    "description": "让模型先在无头 Chrome 中检查 HTML 页面，再在对话中以沙箱框架显示。"
+  },
+  "ui": {
+    "fullscreen": "全屏",
+    "exitFullscreen": "退出全屏",
+    "row.previewTitle": "HTML 预览",
+    "row.renderTitle": "HTML 渲染",
+    "row.light": "浅色",
+    "row.dark": "深色",
+    "row.stopped": "已停止",
+    "row.screenshot": "预览截图",
+    "row.result": "结果",
+    "row.source": "源码",
+    "row.inspect": "检查"
+  }
+}

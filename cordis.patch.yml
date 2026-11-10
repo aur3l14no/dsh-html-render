@@ -1,0 +1,4 @@
+- insert:
+    - id: html-render
+      name: '@local/dsh-html-render'
+      config: {}

@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "title": "HTML render",
+    "description": "Lets the model check an HTML page in headless Chrome and show it in the chat in a sandboxed frame."
+  },
+  "ui": {
+    "fullscreen": "Full screen",
+    "exitFullscreen": "Exit full screen",
+    "row.previewTitle": "HTML preview",
+    "row.renderTitle": "HTML render",
+    "row.light": "Light",
+    "row.dark": "Dark",
+    "row.stopped": "Stopped",
+    "row.screenshot": "Preview screenshot",
+    "row.result": "Result",
+    "row.source": "Source",
+    "row.inspect": "Inspect"
+  }
+}
