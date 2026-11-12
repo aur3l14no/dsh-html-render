@@ -72,7 +72,7 @@ usual file tools; previews and the render pass only the path. `html_render`
 reads the file once, at the call: later edits do not change the page already
 shown, and showing a new version takes another `html_render`.
 
-The two tool definitions add about 3,100 characters (roughly 750 tokens) to
+The two tool definitions add about 3,200 characters (roughly 800 tokens) to
 each agent. Each preview adds a short text result and one screenshot; each
 render adds one line.
 
