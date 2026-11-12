@@ -63,7 +63,8 @@ function HtmlToolRow(props, kind) {
   const [open, setOpen] = React.useState(false);
   const running = model.state === 'preparing' || model.state === 'running';
   // A page passed by path is shown by its path: the file may have changed since.
-  const source = typeof model.args.path === 'string' ? model.args.path : model.args.html;
+  const path = model.args.path;
+  const source = typeof path === 'string' && path.trim() !== '' ? path : model.args.html;
   const expandable = !running && (typeof source === 'string' || model.text !== '');
   const expanded = open && expandable;
 

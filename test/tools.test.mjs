@@ -101,6 +101,9 @@ test('both tools take a page file by path, and html_render keeps a snapshot of i
   assert.deepEqual(plugin.tools.get('html_render').output.presentationMeta({}, value), { tool: 'html_render', title: 'Sales', height: 160, path: file, html: PAGE });
   await assert.rejects(plugin.run('html_render', { path: file, html: PAGE, title: 'T', height: 160 }), /Pass exactly one of html or path/);
   await assert.rejects(plugin.run('html_preview', {}), /Pass exactly one of html or path/);
+  await assert.rejects(plugin.run('html_preview', { path: ' ', html: '' }), /Pass exactly one of html or path/);
+  const blankPath = await plugin.run('html_render', { path: '', html: PAGE, title: 'T', height: 160 });
+  assert.deepEqual(blankPath, { title: 'T', height: 160 });
   await assert.rejects(plugin.run('html_render', { path: join(dir, 'missing.html'), title: 'T', height: 160 }), /missing\.html is not a readable HTML document/);
 });
 

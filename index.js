@@ -58,13 +58,20 @@ export function apply(ctx, config) {
 
   /** The page a call names, with its local images inlined. The file is read once, here. */
   async function load(args, exec) {
-    const hasPath = typeof args.path === 'string';
-    if (hasPath === (typeof args.html === 'string')) throw new Error('Pass exactly one of html or path.');
+    // Strict function calling makes some models fill every parameter, so a blank
+    // value counts as not passed.
+    const given = key => typeof args[key] === 'string' && args[key].trim() !== '';
+    const hasPath = given('path');
+    if (hasPath === given('html')) {
+      throw new Error(hasPath
+        ? `Pass exactly one of html or path, not both (got path ${JSON.stringify(args.path)}). Leave the other out or empty.`
+        : 'Pass exactly one of html or path.');
+    }
     const read = await reader(exec);
     const source = hasPath ? await readPage(read, args.path, MAX_HTML_LENGTH, exec.signal) : args.html;
     checkHtml(source, hasPath ? args.path : 'html');
     const { html, inlined, problems } = await inlineLocalImages(source, read, exec.signal);
-    return { source, html, inlined, problems };
+    return { path: hasPath ? args.path : undefined, source, html, inlined, problems };
   }
 
   async function acceptsImages(exec) {
@@ -167,11 +174,11 @@ export function apply(ctx, config) {
       const page = await load(args, exec);
       const problems = [...layoutProblems(page.source), ...page.problems];
       if (problems.length > 0) throw new Error(`${problems.join(' ')} Fix the page, check it with html_preview, and call html_render again.`);
-      const fromFile = typeof args.path === 'string';
+      const fromFile = page.path !== undefined;
       return {
         title,
         height,
-        ...(fromFile ? { path: args.path } : {}),
+        ...(fromFile ? { path: page.path } : {}),
         ...(fromFile || page.inlined > 0 ? { html: page.html } : {}),
       };
     },
