@@ -135,7 +135,7 @@ export function apply(ctx, config) {
 
   ctx.tools.register(defineTool({
     name: 'html_render',
-    description: `Show a finished HTML page (chart, diagram, table, mockup) to the user in the DSH chat, in a sandboxed frame at this point of the conversation: text you write after the call appears below the page. Use it for every chart or diagram you show the user, instead of a Mermaid or ASCII drawing in your reply. Check it with html_preview first and pass the same path or html. Do not announce or restate the page in your reply. The frame starts at the given height and then fits the content, up to 20000px. ${PAGE_RULES} ${THEME_RULES}`,
+    description: `Show a finished HTML page (chart, diagram, table, mockup) to the user in the DSH chat, in a sandboxed frame at this point of the conversation: text you write after the call appears below the page. Check it with html_preview first and pass the same path or html. Do not announce or restate the page in your reply. The frame starts at the given height and then fits the content, up to 20000px. ${PAGE_RULES} ${THEME_RULES}`,
     parameters: {
       ...SOURCE_PARAMS,
       title: { type: 'string', required: true, description: 'Short name of the page, at most 200 characters.' },
