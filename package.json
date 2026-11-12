@@ -1,6 +1,6 @@
 {
   "name": "@local/dsh-html-render",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "description": "Lets DSH agents answer with an HTML page: they check it in headless Chrome, then show it in the chat.",
   "type": "module",

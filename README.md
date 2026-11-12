@@ -21,13 +21,13 @@ Chromium on the machine running DSH. MIT licensed.
 **Add plugin**, paste this address and install:
 
 ```
-https://github.com/aur3l14no/dsh-html-render/releases/download/v0.1.0/dsh-html-render-0.1.0.tgz
+https://github.com/aur3l14no/dsh-html-render/releases/download/v0.1.1/dsh-html-render-0.1.1.tgz
 ```
 
 **Terminal** (a CLI Web profile):
 
 ```sh
-dsh plugin --profile web add https://github.com/aur3l14no/dsh-html-render/releases/download/v0.1.0/dsh-html-render-0.1.0.tgz
+dsh plugin --profile web add https://github.com/aur3l14no/dsh-html-render/releases/download/v0.1.1/dsh-html-render-0.1.1.tgz
 dsh web
 ```
 
